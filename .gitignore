@@ -1,0 +1,12 @@
+node_modules
+.vercel
+.grok
+artifacts
+screenshots
+dist
+desktop/site
+desktop/kohaku
+desktop/*.exe
+*.log
+.env
+.env.*

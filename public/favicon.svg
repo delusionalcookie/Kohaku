@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Kohaku">
+  <rect width="32" height="32" rx="8" fill="#2A1812"/>
+  <path fill="#C44536" d="M8.2 16 3.2 10.4 6.8 16 3.2 21.6Z"/>
+  <ellipse cx="18" cy="16" rx="9.2" ry="6.1" fill="#C44536"/>
+  <ellipse cx="16.6" cy="17.7" rx="5.1" ry="2.5" fill="#F6EFE4"/>
+  <circle cx="23.6" cy="13.7" r="1.7" fill="#B8893A"/>
+  <circle cx="24" cy="13.6" r="0.65" fill="#2A1812"/>
+</svg>

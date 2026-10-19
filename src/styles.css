@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #2a1812;
+  --color-paper: #f6efe4;
+  --color-vermillion: #a33b30;
+  --color-gold: #c6a15b;
+  --font-display: "Shippori Mincho", "Iowan Old Style", Palatino, serif;
+  --font-sans: "Zen Kaku Gothic New", "Hiragino Sans", "Noto Sans JP", sans-serif;
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  button:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
+  }
+}
+
+.shrine-scrim {
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--color-ink) 62%, transparent) 0%,
+    transparent 24%,
+    transparent 62%,
+    color-mix(in srgb, var(--color-ink) 72%, transparent) 100%
+  );
+}
+
+.kohaku-glow {
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  top: 4%;
+  height: 36%;
+  background: radial-gradient(circle, var(--color-gold) 0%, transparent 68%);
+  filter: blur(18px);
+  pointer-events: none;
+}
+
+.kohaku-ring {
+  position: absolute;
+  left: 30%;
+  top: 8%;
+  width: 40%;
+  height: 16%;
+  border: 2px solid var(--color-gold);
+  border-radius: 999px;
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--color-gold) 35%, transparent);
+  animation: kohaku-pulse 1.8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.kohaku-figure {
+  width: min(92vw, 440px, calc(54dvh * 2 / 3));
+  aspect-ratio: 2 / 3;
+}
+
+.kohaku-head {
+  position: absolute;
+  left: 26%;
+  top: 4%;
+  z-index: 3;
+  width: 48%;
+  height: 30%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  appearance: none;
+}
+
+.kohaku-body {
+  position: absolute;
+  left: 14%;
+  top: 32%;
+  z-index: 2;
+  width: 72%;
+  height: 58%;
+  background: transparent;
+}
+
+@keyframes kohaku-pulse {
+  0%,
+  100% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(1.07);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kohaku-ring {
+    animation: none;
+  }
+}
